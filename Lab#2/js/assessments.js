@@ -15,4 +15,4 @@ const arrayConcat = (numbersList) => {
 };
 
 // console.log(arrayConcat(123));
-console.log(arrayConcat("123,1;23,345"));
+console.log(arrayConcat("123,1,23,345"));
