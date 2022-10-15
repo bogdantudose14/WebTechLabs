@@ -1,1 +1,1 @@
-The assessments can be found under Lab#2 section in the Google Doc
+The assessments can be found under Lab#3 section in the Google Doc
