@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head> </head>
+
+  <body>
+    <button id="retrieveDataBtn">Get Data</button>
+
+    <table class="dataTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <form>
+      <input id="inputName" type="text" /> <br />
+      <input id="inputAge" type="number" /> <br />
+      <input
+        id="submitData"
+        type="button"
+        value="Submit"
+        onclick="sendData()"
+      />
+      <br />
+    </form>
+
+    <script src="script.js"></script>
+  </body>
+</html>
