@@ -6,6 +6,10 @@
 - `tokens` is an array with token names .
 - The function should replace each `...` from `input` with the values from `tokens` in the following format `${tokenName}`;
 
+```sh
+Hint: Dollar signs can be escaped as well to prevent interpolation. => `\${1}` === "${1}"
+```
+
 # Complete the following tasks:
 
 - `input` should be a `string`. If other type is passed throw an `Error` with the message `Input should be a string`; (0.5 pts)
