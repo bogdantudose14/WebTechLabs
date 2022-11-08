@@ -6,7 +6,9 @@
 - `tokens` un vector de tokenuri.
 - Functia trebuie sa inlocuiasca toate `...` din `input` cu valorile corespunzatoare din `tokens` sub urmatorul format `${tokenName}`, in ordinea in care exista in vector;
 
-  | Hint | Escape the first $ using "\" |
+```sh
+Hint => Escape the first $ using "\"
+```
 
 # Complete the following tasks:
 
