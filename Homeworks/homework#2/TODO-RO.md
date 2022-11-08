@@ -7,7 +7,7 @@
 - Functia trebuie sa inlocuiasca toate `...` din `input` cu valorile corespunzatoare din `tokens` sub urmatorul format `${tokenName}`, in ordinea in care exista in vector;
 
 ```sh
-Hint => Escape the first $ using "\"
+Hint: Dollar signs can be escaped as well to prevent interpolation. => `\${1}` === "${1}"
 ```
 
 # Complete the following tasks:
