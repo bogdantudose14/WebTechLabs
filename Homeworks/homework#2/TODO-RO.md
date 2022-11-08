@@ -6,6 +6,8 @@
 - `tokens` un vector de tokenuri.
 - Functia trebuie sa inlocuiasca toate `...` din `input` cu valorile corespunzatoare din `tokens` sub urmatorul format `${tokenName}`, in ordinea in care exista in vector;
 
+  | Hint | Escape the first $ using "\" |
+
 # Complete the following tasks:
 
 - `input` trebuie sa fie de tip `string`. Daca alt tip este pasat ca si parametru aruncati `Error` cu mesajul `Input should be a string`; (0.5 pts)
