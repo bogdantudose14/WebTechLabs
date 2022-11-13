@@ -1,0 +1,169 @@
+body {
+  /* 100vh = 100% of the viewport height */
+  height: 100vh;
+  background-color: beige;
+}
+
+/* pe pozitia cea mai din dreapta => cati selectori de element am */
+
+/* 0-0-0-1 */
+div {
+  border: solid 2px brown;
+}
+
+/* 0-0-1-0 */
+
+div.wrapper {
+  border: dashed 3px darkblue;
+  height: 200px;
+}
+
+/* 0-1-0-0 */
+
+#content {
+  margin-top: 50px;
+  border: double 5px salmon;
+}
+
+/* descendant vs child */
+
+/* all the descendants */
+.descendant_children_example_div span {
+  background-color: rgba(122, 122, 0, 0.3);
+}
+
+/* all the direct children */
+.descendant_children_example_div > span {
+  background-color: rgba(255, 122, 0, 0.5);
+}
+
+/* selection expression => to what DOM nodes this should be applied */
+#navigation {
+  display: flex;
+  /* background-color: darkgreen; */
+  background-color: #8fbc8f !important;
+}
+
+/* Children of the div with id = navigation */
+
+#navigation > div {
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* PSEUDO-CLASSES (:) */
+
+li:first-child {
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+}
+
+li:last-child {
+  font-weight: bold;
+  color: red;
+}
+
+li:nth-child(4) {
+  border-radius: 10px;
+  border: solid green;
+}
+
+li:nth-child(odd) {
+  background-color: gold;
+}
+
+li:nth-child(even) {
+  background-color: silver;
+}
+
+#navigation > div:hover {
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* all the element that have the wrapper class but not position class */
+.wrapper:not(.position) {
+  border: 2px dashed yellowgreen;
+}
+
+/* example of pseudoelement (::) */
+
+/* ol::first-line {
+  background-color: black;
+} */
+
+#navigation > div:last-child {
+  margin-left: auto;
+}
+
+#content > div {
+  height: 50px;
+  width: 50px;
+}
+
+/* Relative => position the element relative to its normal position */
+/* Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position. */
+#relative {
+  position: relative;
+  left: 5%;
+  top: 2%;
+  background: orange;
+}
+
+/* Remember that these values will be relative to the next parent element with relative (or absolute) positioning.  */
+/* If there is no such parent, it will default all the way back up to the <html> element itself meaning it will be placed relative to the page itself. */
+/* Note: Absolute positioned elements are removed from the normal flow, and can overlap elements. */
+/* An element with this type of positioning is not affected by other elements and it doesn’t affect other elements. */
+#absolute {
+  position: absolute;
+  left: 30%;
+  top: 3%;
+  background: red;
+}
+
+/* An element with position: fixed; is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. 
+The top, right, bottom, and left properties are used to position the element. */
+#fixed {
+  position: fixed;
+  top: 50%;
+  background: yellow;
+}
+
+/* An element with position: sticky; is positioned based on the user's scroll position. */
+/* A sticky element toggles between relative and fixed, depending on the scroll position. 
+It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). */
+#sticky {
+  position: sticky;
+  top: 5%;
+  left: 15%;
+  background: navy;
+}
+
+/* #region CSS Display - inline, block, inline-block */
+
+.container > div {
+  background-color: orange;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+/* #endregion */
+
+/* #region Media queries*/
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: lightsteelblue;
+  }
+}
+
+@media only screen and (orientation: landscape) {
+  body {
+    font-size: x-large;
+  }
+}
+
+/* #endregion */

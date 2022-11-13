@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* internal CSS linking */
+      #navigation {
+        background-color: orange;
+      }
+    </style>
+    <!-- external CSS linking -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- inline styling -->
+    <div id="navigation" style="background-color: salmon">
+      <!-- this type of styling has a higher priority than the other two -->
+      <div id="btn">Home</div>
+      <div>About</div>
+      <div>Login</div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="wrapper" id="content">Wrapper Div</div>
+
+    <!-- single line break tag -->
+    <br />
+    <br />
+
+    <div class="descendant_children_example_div">
+      <span class="wrapper-child"> Wrapper Direct child</span>
+      <p>
+        <span class="wrapper-descendant"> Wrapper Descendant</span>
+      </p>
+    </div>
+
+    <ol class="wrapper pseudo-elements">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ol>
+  </body>
+</html>
