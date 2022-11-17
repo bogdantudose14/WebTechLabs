@@ -1,0 +1,50 @@
+/* 
+Grid Elements
+
+A Grid Layout must have a parent element with the 'display' property set to grid or inline-grid.
+
+Direct child element(s) of the grid container automatically becomes grid items. */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
+  padding: 10px;
+  /* grid-gap: 10px; */
+  /* height: 75vh; */
+
+  /* center the items on the row axis (x) */
+  /* default value for this property is stretch */
+  /* justify-items: center; */
+
+  /* center the items on the column axis (y) */
+  /* default value for this property is stretch */
+
+  /* align-items: end; */
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  /* padding: 20px; */
+  font-size: 30px;
+  text-align: center;
+  height: 100px;
+  /* 
+  align-self: start;
+  justify-self: end; */
+}
+
+.grid-item-1 {
+  grid-column: span 2;
+}
+
+.grid-item-4 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.grid-item-7 {
+  height: auto;
+  grid-row-start: 4;
+  grid-row-end: 6;
+}
