@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 
 const Course = sequelize.define("course", {
   id: {
-    type: DataTypes.UUID,
+    type: DataTypes.UUID, // preffered type for IDs
     defaultValue: DataTypes.UUIDV4,
     primaryKey: true,
   },
