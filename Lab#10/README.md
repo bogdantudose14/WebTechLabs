@@ -12,3 +12,10 @@ Extract the three executable files into a folder inside your project (i.e 'sqlit
  - Open database / yourdatabase.db;
  - Browse Data => see the records;
 ```
+
+## Starting the server
+
+```sh
+ - run "npm install" inside the Lab#10 folder => this will install into node_modules the dependencies specified in package.json;
+ - run "node app.js"
+ ```
