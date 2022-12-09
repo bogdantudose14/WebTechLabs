@@ -17,7 +17,8 @@ universityRouter.get("/allUniversities", async (request, response, next) => {
       response.sendStatus(204);
     }
   } catch (error) {
-    next(error);
+    next(error); // use the next optional parameter
+    // to pass control to the next middleware function if defined (it is, in app.js)
   }
 });
 
@@ -27,9 +28,10 @@ universityRouter.get("/allUniversities", async (request, response, next) => {
 universityRouter.post("/addNewUniversity", async (request, response, next) => {
   try {
     const university = await University.create(request.body);
-    response.status(201).location(university.id).send();
+    response.status(201).send();
   } catch (error) {
-    next(error);
+    next(error); // use the next optional parameter
+    // to pass control to the next middleware function if defined (it is, in app.js)
   }
 });
 
@@ -42,7 +44,7 @@ universityRouter.get(
     try {
       const university = await University.findByPk(request.params.universityId);
       if (university) {
-        const students = await university.getStudents();
+        const students = await university.getStudents(); // sequelize names the method using 'get' + *uppercase modelName* (plural form)
         if (students.length > 0) {
           response.json(students);
         } else {
@@ -67,11 +69,13 @@ universityRouter.post(
       const university = await University.findByPk(request.params.universityId);
       if (university) {
         const student = await Student.create(request.body);
-        university.addStudent(student);
+        university.addStudent(student); // sequelize names the method using 'add' + *uppercase modelName*
         await university.save(); //If you want to update a specific set of fields, you can use update(),
         //otherwise save() will also persist any other changes that have been made on this instance
         response.status(201).location(student.id).send();
       } else {
+        // if the university does not exist (null is returned)
+        // send the 404-Not Found
         response.sendStatus(404);
       }
     } catch (error) {
@@ -90,8 +94,9 @@ universityRouter.get(
       const university = await University.findByPk(request.params.universityId);
       if (university) {
         const students = await university.getStudents({
-          where: { id: request.params.studentId },
+          where: { id: request.params.studentId }, // could be searched by firstName or any attribute
         });
+        // shift() js method => access the first element if an array of more results is returned
         const student = students.shift();
         if (student) {
           response.json(student);
@@ -109,6 +114,7 @@ universityRouter.get(
 
 /**
  * PUT to update a student from a university.
+ * Send data in the body of the request
  */
 universityRouter.put(
   "/:universityId/students/:studentId",
@@ -121,8 +127,8 @@ universityRouter.put(
         });
         const student = students.shift();
         if (student) {
-          await student.update(request.body);
-          response.status(204);
+          await student.update(request.body); // update only if the student exists
+          response.sendStatus(204);
         } else {
           response.sendStatus(404);
         }
@@ -145,7 +151,7 @@ universityRouter.delete(
       const university = await University.findByPk(request.params.universityId);
       if (university) {
         const students = await university.getStudents({
-          where: { id: request.params.studentId },
+          where: { id: request.params.studentId }, //where clause for filtering
         });
         const student = students.shift();
         if (student) {
@@ -162,6 +168,10 @@ universityRouter.delete(
     }
   }
 );
+
+// The same methods are for courses => there is the same relationship between
+// University and Course as it was between University and Student
+// GET - POST - PUT - DELETE
 
 /**
  * GET the list of courses.
@@ -292,9 +302,12 @@ universityRouter.delete(
   }
 );
 
+// Many-to-Many relationships examples
+
 /**
  * GET student enrollments to courses.
  */
+
 universityRouter.get(
   "/:universityId/students/:studentId/enrollments",
   async (request, response, next) => {
@@ -371,6 +384,7 @@ universityRouter.get(
         });
         const course = courses.shift();
         if (course) {
+          // limit the returned columns by using "attributes" i.e. : ["id","firstName"]
           const students = await course.getStudents({ attributes: ["id"] });
           if (students.length > 0) {
             response.json(students);
@@ -440,7 +454,7 @@ universityRouter.delete(
         });
         const student = students.shift();
         if (student && course) {
-          course.removeStudent(student);
+          course.removeStudent(student); // sequelize names the method using 'remove' + *uppercase modelName*
           course.save();
           response.sendStatus(204);
         } else {
