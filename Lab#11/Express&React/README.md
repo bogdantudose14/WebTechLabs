@@ -5,7 +5,7 @@
 - move into the "server" folder;
 - run "npm install" to generate the "node_modules" folder;
 - run "node server.js" to start the server;
-- sync the database + add data => GET HTTP request on "http://localhost:8000/sync";
+- sync the database + add data => GET HTTP request on "http://localhost:8080/sync";
 
 ```
 
