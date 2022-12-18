@@ -9,7 +9,6 @@
 
 ```
 
-> Note: `A webpack error might occur` => this is treated as a warning and you can ignore it.
 
 ## Client
 
@@ -19,5 +18,6 @@
 - run "npm install" to generate the "node_modules" folder;
 - run "npm start" to start the client app (port 3000 is a default);
 
-
 ```
+
+> Note: `A webpack error might occur` => this is treated as a warning and you can ignore it.
