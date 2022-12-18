@@ -25,12 +25,19 @@ function UserList(props) {
     getUsers();
   };
 
+  // if useEffect is called with an empty dependencies array, it will run the
+  //callback only once, when the component is rendered for the first time
+
   useEffect(() => {
-    getUsers();
+    getUsers(); // fetch the data from the express server (start the server first!)
   }, []);
 
   return (
     <div className="user-list">
+      {/* render a "User" component for every data entry
+      the key attribute is used by react for list management
+      pass data to the "User" component through "item" prop => how you name the prop is up to you
+      access the data in the "User" component by props.item */}
       {users.map((e) => (
         <User key={e.id} item={e} />
       ))}
