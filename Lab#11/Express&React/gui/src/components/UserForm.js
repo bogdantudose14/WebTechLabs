@@ -21,7 +21,7 @@ function UserForm(props) {
   const addUser = (evt) => {
     console.warn("called");
 
-    //pass data from child component to parent component (UserList) by calling
+    // pass data from child component to parent component (UserList) by calling
     // the method sent by the parent component through props, but with data
     // the UserList will use the data sent from here {username,fullName,type} for posting it to the server
     onAdd({
