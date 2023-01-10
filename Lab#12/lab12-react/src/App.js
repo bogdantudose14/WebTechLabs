@@ -9,6 +9,8 @@ function App() {
     <div>
       <MainHeader />
       <main>
+        {/* By using the “Switch” component, only one of the routes will be active
+        at the same time => the route which is matched first! */}
         <Switch>
           {/* http://localhost:3000/home */}
           <Route path="/home">

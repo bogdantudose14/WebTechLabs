@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 const MovieDetail = () => {
   const params = useParams();
 
+  let id = params.movieId;
+
   //   console.log(params.movieId);
   return (
     <section>
