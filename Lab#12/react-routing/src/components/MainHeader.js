@@ -6,9 +6,7 @@ const MainHeader = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/home">
-              <button>Press</button>
-            </Link>
+            <Link to="/home">Home</Link>
           </li>
           <li>
             <Link to="/movies">Movies</Link>

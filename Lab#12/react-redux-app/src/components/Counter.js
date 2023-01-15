@@ -14,7 +14,7 @@ const Counter = () => {
   //useSelector for other state property
   const show = useSelector((state) => state.showCounter);
 
-  const toggleCounterHandler = () => {
+  const toggleCounterHandler = (j) => {
     dispatch({ type: "toggle" });
   };
 

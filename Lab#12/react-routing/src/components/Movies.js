@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+// Link is a React component similar to an <a> tag with the href attribute set, but the
+// default behaviour is prevented.
 
 function Movies() {
   return (
