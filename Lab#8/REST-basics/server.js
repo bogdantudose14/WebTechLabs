@@ -4,7 +4,6 @@
 // dependencies found in the "dependencies" object
 
 import express from 'express'
-import bodyParser from 'body-parser'
 import cors from 'cors'
 
 let app = express() // It's a layer built on the top of the Node js that helps manage servers and routes.
@@ -12,7 +11,7 @@ let router = express.Router()
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-// app.use(cors()) // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+app.use(cors()) // CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
 app.use('/api', router) // Mount the router as middleware at path /api
 
 //hard code some data as we don't have a database configuration yet
