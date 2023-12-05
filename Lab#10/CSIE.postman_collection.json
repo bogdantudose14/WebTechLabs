@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "64107115-2d16-4052-9b6c-10be846e47a9",
+		"name": "CSIE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31276004"
+	},
+	"item": [
+		{
+			"name": "Lab#9",
+			"item": [
+				{
+					"name": "getAllMovies",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "filterMovies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5001/api/filterMovies?minYear=1980",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"filterMovies"
+							],
+							"query": [
+								{
+									"key": "minYear",
+									"value": "1980"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postMovie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"id\":2,\n    \"title\":\"Liceenii\",\n    \"genre\":\"comedy\",\n    \"year\": 1985\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/newMovie"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:5001/api/movies/1"
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Titanic reloaded\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/movies/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lab#10",
+			"item": [
+				{
+					"name": "Create database",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "localhost:5001/api/createDatabase"
+					},
+					"response": []
+				},
+				{
+					"name": "Add data from file",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"name\": \"Bucharest Academy of Economic Studies\",\n    \"students\": [\n      {\n        \"key\": \"student01\",\n        \"firstName\": \"Alexandru\",\n        \"lastName\": \"Popa\"\n      },\n      {\n        \"key\": \"student02\",\n        \"firstName\": \"Mihaela\",\n        \"lastName\": \"Alecu\"\n      },\n      {\n        \"key\": \"student03\",\n        \"firstName\": \"George\",\n        \"lastName\": \"Iancu\"\n      }\n    ],\n    \"courses\": [\n      {\n        \"key\": \"course01\",\n        \"name\": \"Web Technologies\"\n      },\n      { \"key\": \"course02\", \"name\": \"Multimedia\" }\n    ],\n    \"enrollments\": [\n      {\n        \"studentKey\": \"student01\",\n        \"courseKey\": \"course01\"\n      },\n      {\n        \"studentKey\": \"student02\",\n        \"courseKey\": \"course01\"\n      },\n      { \"studentKey\": \"student02\", \"courseKey\": \"course02\" },\n      {\n        \"studentKey\": \"student03\",\n        \"courseKey\": \"course01\"\n      }\n    ]\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5001/api/data"
+					},
+					"response": []
+				},
+				{
+					"name": "Get data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5001/api/data"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

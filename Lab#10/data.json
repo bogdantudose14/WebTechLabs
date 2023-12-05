@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Bucharest Academy of Economic Studies",
+    "students": [
+      {
+        "key": "student01",
+        "firstName": "Alexandru",
+        "lastName": "Popa"
+      },
+      {
+        "key": "student02",
+        "firstName": "Mihaela",
+        "lastName": "Alecu"
+      },
+      {
+        "key": "student03",
+        "firstName": "George",
+        "lastName": "Iancu"
+      }
+    ],
+    "courses": [
+      {
+        "key": "course01",
+        "name": "Web Technologies"
+      },
+      { "key": "course02", "name": "Multimedia" }
+    ],
+    "enrollments": [
+      {
+        "studentKey": "student01",
+        "courseKey": "course01"
+      },
+      {
+        "studentKey": "student02",
+        "courseKey": "course01"
+      },
+      { "studentKey": "student02", "courseKey": "course02" },
+      {
+        "studentKey": "student03",
+        "courseKey": "course01"
+      }
+    ]
+  }
+]
